@@ -25,6 +25,13 @@ find_package(OpenGL REQUIRED COMPONENTS OpenGL)
 find_package(GLEW REQUIRED)
 
 target_link_libraries(${OUT} PRIVATE
-  sfml-system sfml-graphics sfml-window
   OpenGL::GL
   GLEW::GLEW)
+
+if (TARGET sfml-system)
+  target_link_libraries(${OUT} PRIVATE
+    sfml-system sfml-graphics sfml-window)
+else()
+  target_link_libraries(${OUT} PRIVATE ${SFML_LIBRARIES})
+  target_include_directories(${OUT} PRIVATE ${SFML_INCLUDE_DIR})
+endif()
