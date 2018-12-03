@@ -5,14 +5,14 @@
 #include <iostream>
 
 Viewer::Viewer(sf::ContextSettings context, int argc, char **argv)
-    : window{sf::VideoMode{800, 600}, "Texture Blending test",
+    : window{sf::VideoMode{600, 600}, "Texture Blending test",
              sf::Style::Default, context} {
   (void)argc;
   (void)argv;
   // std::cerr << context.majorVersion;
   window.setActive(true);
   glewInit(); // IMPORTANT
-  glViewport(0, 0, 800, 600);
+  glViewport(0, 0, 600, 600);
 }
 
 void Viewer::init() {
