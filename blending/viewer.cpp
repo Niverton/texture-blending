@@ -50,7 +50,7 @@ void Viewer::init() {
   // Load texture
   // TODO get file from argv
   sf::Image texture{};
-  texture.loadFromFile("../data/brick.jpg");
+  texture.loadFromFile("../data/test.png");
   screen.init(texture);
 
   checkError();

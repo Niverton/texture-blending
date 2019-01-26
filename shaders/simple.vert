@@ -9,6 +9,5 @@ out vec2 vtxcoords;
 
 void main() {
   texcoords = vtx_texcoords;
-  smpcoords = vtx_texcoords*8;
   gl_Position = vtx_position;
 }
